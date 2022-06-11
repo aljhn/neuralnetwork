@@ -1,0 +1,56 @@
+# GLOBALS
+
+loss: cross_entropy
+learning_rate: 0.01
+weight_regularization_rate: 0.001
+weight_regularization_type: l2
+
+batch_size: 20
+epochs: 50
+
+verbose: false
+visualize_kernels: false
+
+#############################################
+# LAYERS
+
+conv2d:
+_kernel_size: 3
+_output_filter_amount: 2
+_stride: 1
+_mode: same
+_activation: identity
+_lower_weight_range: -1
+_upper_weight_range: 1
+
+conv2d:
+_kernel_size: 3
+_output_filter_amount: 4
+_stride: 1
+_mode: same
+_activation: identity
+_lower_weight_range: -1
+_upper_weight_range: 1
+
+dense:
+_nodes: 100
+_activation: tanh
+_lower_weight_range: -1
+_upper_weight_range: 1
+
+dense:
+_nodes: 4
+_activation: tanh
+_lower_weight_range: -1
+_upper_weight_range: 1
+
+output_activation: softmax
+
+#############################################
+# Image generator
+
+image_width: 10
+noise_fraction: 0.01
+image_amount: 1000
+display: false
+display_amount: 10
